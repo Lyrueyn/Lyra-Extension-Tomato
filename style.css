@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --bg: #0f1115;
   --card: #171b22;
   --card2: #1e2530;
@@ -73,3 +73,10 @@ button:disabled { opacity: .45; cursor: default; }
 .import-item.ok { color: var(--ok); }
 .import-item.bad { color: var(--bad); }
 .foot { color: #687688; font-size: 11px; line-height: 1.8; margin-top: 18px; }
+
+.disclaimer-mask { position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,.72); display: flex; align-items: center; justify-content: center; padding: 24px; }
+.disclaimer-mask[hidden] { display: none; }
+.disclaimer-box { max-width: 620px; background: #171b22; border: 1px solid #3a4a5e; border-radius: 14px; padding: 22px; box-shadow: 0 24px 80px rgba(0,0,0,.6); }
+.disclaimer-box h2 { margin: 0 0 12px; }
+.disclaimer-box p { color: var(--sub); font-size: 13px; line-height: 1.9; margin: 8px 0; }
+.disclaimer-box button { margin-top: 10px; }

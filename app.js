@@ -1,4 +1,4 @@
-(() => {
+﻿(() => {
   "use strict";
 
   const $ = (id) => document.getElementById(id);
@@ -352,6 +352,14 @@
     $("libraryRefreshBtn").addEventListener("click", loadLibrary);
   }
 
+  const mask = $("disclaimerMask");
+  if (mask && !localStorage.getItem("tomato_disclaimer_ok")) {
+    mask.hidden = false;
+    $("acceptDisclaimer").addEventListener("click", () => {
+      localStorage.setItem("tomato_disclaimer_ok", "1");
+      mask.hidden = true;
+    });
+  }
   bind();
   loadPrerequisites();
   loadIdentity();
