@@ -1,0 +1,11 @@
+﻿{
+    "id":  "tomato",
+    "name":  "番茄小说下载器",
+    "version":  "0.2.0",
+    "entry":  "index.html",
+    "description":  "番茄小说下载器前端；签名/注册核心不包含在本仓库，需私有核心组件。",
+    "kind":  "tool",
+    "fileTypes":  [
+
+                  ]
+}

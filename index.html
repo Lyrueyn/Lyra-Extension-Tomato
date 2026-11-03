@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>番茄小说下载器 · 璃鸢镜</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div>
+      <h1>番茄小说下载器</h1>
+      <p class="sub">免登录 · 匿名设备 · 按已安装的阅读器导出 TXT / EPUB / PDF</p>
+    </div>
+    <div class="top-actions">
+      <span id="identityText" class="pill">设备身份检查中…</span>
+      <button id="identityBtn" class="ghost" type="button">换匿名设备</button>
+    </div>
+  </header>
+
+  <section id="prereq" class="notice error" hidden>
+    没有检测到 TXT / EPUB / PDF 阅读器扩展。请先在扩展中心安装至少一个阅读器，再使用本下载器。
+  </section>
+
+  <section class="card search-card">
+    <div class="search-row">
+      <input id="searchInput" type="search" placeholder="输入书名或作者，例如：我不是戏神" autocomplete="off"/>
+      <button id="searchBtn" class="primary" type="button">搜索</button>
+    </div>
+    <div id="searchHint" class="hint"></div>
+    <div id="results" class="results"></div>
+  </section>
+
+  <section class="card">
+    <div class="detail-head">
+      <div>
+        <h2>已下载书籍</h2>
+        <p class="sub">可以在这里检查新章节并更新；更新后会覆盖对应阅读器书库中的旧文件并保留书库卡片。</p>
+      </div>
+      <button id="libraryRefreshBtn" class="ghost" type="button">刷新</button>
+    </div>
+    <div id="libraryList" class="results"></div>
+  </section>
+
+  <section id="detail" class="card" hidden>
+    <div class="detail-head">
+      <div>
+        <h2 id="bookTitle">—</h2>
+        <p id="bookMeta" class="sub"></p>
+      </div>
+      <button id="backBtn" class="ghost" type="button">返回搜索</button>
+    </div>
+    <p id="bookAbstract" class="abstract"></p>
+    <div class="download-options">
+      <label>起始章 <input id="startChapter" type="number" min="1" value="1"/></label>
+      <label>结束章 <input id="endChapter" type="number" min="1" value="1"/></label>
+      <div class="formats">
+        <span>下载格式：</span>
+        <label><input id="fmtTxt" type="checkbox" value="txt"/> TXT</label>
+        <label><input id="fmtEpub" type="checkbox" value="epub"/> EPUB</label>
+        <label><input id="fmtPdf" type="checkbox" value="pdf"/> PDF</label>
+      </div>
+    </div>
+    <div class="hint" id="formatHint"></div>
+    <div class="actions">
+      <button id="downloadBtn" class="primary" type="button">开始下载</button>
+    </div>
+  </section>
+
+  <section id="progressCard" class="card" hidden>
+    <div class="progress-head">
+      <strong id="phaseText">准备</strong>
+      <span id="percentText">0%</span>
+    </div>
+    <div class="progress"><div id="progressBar"></div></div>
+    <p id="progressInfo" class="sub"></p>
+    <p id="progressMessage" class="hint"></p>
+    <button id="cancelBtn" class="danger" type="button">取消</button>
+  </section>
+
+  <section id="doneCard" class="card" hidden>
+    <h2>下载完成</h2>
+    <p id="doneInfo" class="sub"></p>
+    <div id="importResults" class="import-results"></div>
+  </section>
+
+  <footer class="foot">仅使用自动注册的匿名设备，不登录番茄账号；部分章节是否开放取决于接口权限。</footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
